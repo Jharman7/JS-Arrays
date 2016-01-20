@@ -5,7 +5,9 @@ var arr = [10,20,30];
 //Create a function named 'first' that is given 'arr' as the argument and  returns the first item in the given array.
 
   //Code Here
-
+var first = function (arr) {
+  return arr[0];
+}
 
 //Next problem
 
@@ -16,7 +18,10 @@ var arr = [40,50,60];
 
 
   //Code Here
-
+var last = function (arr) {
+  var last = arr.length - 1;
+  return arr[last];
+}
 
 //Next Problem
 
@@ -25,7 +30,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
 
   //Code Here
-
+var looper = function (arr) {
+  for (var i = 0; i < arr.length; i++) {
+    alert(arr[i]);
+  }
+}
 
 //Next problem
 
@@ -35,7 +44,14 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 //Write a function called reversedLooper that is given letters as it's only argument and loops through the given array backwards alerting every item in the array starting at the end.
 
   //Code Here
-
+function reversedLooper(par1) {
+  var arr = par1;
+  arr = arr.reverse();
+  for (var i = 0; i < arr.length; i++) {
+    alert(arr[i]);
+  }
+  return arr;
+}
 
 //Next Problem
 
@@ -45,6 +61,16 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 
   //Code Here
 
+function evenFinder (par1) {
+  var arr = par1;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 != 0) {
+      arr.splice(i,1);
+    }
+
+  }
+  return arr;
+}
 
 //Next problem
 
@@ -55,10 +81,21 @@ var odds = [];
 //Write a function called divider that is given three arguments, nums, evens, and odds.
 //Have divider return an Array with the first item in the array being the evens array (all the even values from nums) and the second item in the Array being the odds array(all the odd values from nums).
 
-
-
   //Code Here
-
+function divider (par1, par2, par3) {
+  var iniArray = par1;
+  var evenArray = [];
+  var oddArray = [];
+  for (var i=0;i<iniArray.length; i++) {
+    if (iniArray[i] % 2 === 0) {
+      evenArray.push(iniArray[i]);
+    } else {
+      oddArray.push(iniArray[i]);
+    }
+  }
+  var finalArray = [evenArray, oddArray];
+  return finalArray;
+}
 
 //Next Problem
 
@@ -70,7 +107,14 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Above you're given a function that will return a random number between 0 and 30, and an array full of numbers. Your job is to write a function named finder that will get a random number, then loop through the array to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
-
+function finder () {
+  var num = getRandomArbitrary();
+  if (numbers.indexOf(num) != -1) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 //Next problem
 
@@ -80,7 +124,11 @@ var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
   //Code Here
-
+function reverse(stri) {
+  var arr = stri.split();
+  arr.reverse();
+  return arr.join();
+}
 
 //Next Problem
 
@@ -88,12 +136,12 @@ var str = 'this is my sentence';
 var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 /*
   Here we're going to write a function that mimics going shopping and checking things off of our grocery list,
-  and adding new items to our list. 
-  
+  and adding new items to our list.
+
   Write a function called removeItem that is given two arguments, the first is myGroceryList, and the
   second is an item to remove from myGroceryList. If the second argument (or the item to add or remove) matches an item in myGroceryList,
-  remove that item from the your grocery list and return the new, updated grocery list. 
-  
+  remove that item from the your grocery list and return the new, updated grocery list.
+
   Once you do that, write another function called addItem that is given two arguments, the first is myGroceryList
   and the second is an item to add to your grocery list. In addItem add the item you passed in to
   myGroceryList then return the new, updated grocery list.
@@ -153,9 +201,9 @@ for(var i = 0; i < num2; i++){
 */
 
   //Code Here
-  
-  
-  
+
+
+
 
 //NEXT PROBLEM
 
@@ -265,4 +313,3 @@ Once you find the particular index he's located in, delete him from the array.*/
   //Code Here
 
 //The activity we just did is very much how data works in 'the real world'.
-
